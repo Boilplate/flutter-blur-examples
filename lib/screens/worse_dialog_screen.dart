@@ -1,17 +1,16 @@
 import 'package:blur/widgets/back_arrow.dart';
 import 'package:flutter/material.dart';
 
-// This is the efficient way of blurring behind dialog
+import 'dialog_screen.dart';
 
-// Blur behind dialog in Flutter is done using ModalBarrier class
-// so a good way to get blur effect is change it's color property
-// to BackdropFilter
-// to do that type ModalBarrier as a widget inside build method and
-// ctrl + click on it, that will open it's source file
-// also dont forget to :
-// import 'dart:ui' show ImageFilter;
+class DialogScreen2 extends StatefulWidget {
+  @override
+  _DialogScreen2State createState() => _DialogScreen2State();
+}
 
-class DialogScreen extends StatelessWidget {
+class _DialogScreen2State extends State<DialogScreen2> {
+  bool isDialog = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,39 +55,6 @@ class DialogButton extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class UselessDialog extends StatelessWidget {
-  const UselessDialog();
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text("Good job!"),
-      content: SizedBox(
-        height: 80,
-        width: 120,
-        child: Column(
-          children: [
-            Text("You clicked the button!"),
-            SizedBox(
-              height: 50,
-              width: 50,
-              child: Image(
-                image: AssetImage('assets/animated-hand-image.gif'),
-              ),
-            ),
-          ],
-        ),
-      ),
-      actions: [
-        FlatButton(
-          onPressed: () => Navigator.pop(context),
-          child: Text("OK"),
-        ),
-      ],
     );
   }
 }

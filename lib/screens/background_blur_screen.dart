@@ -2,6 +2,7 @@
 // gives the frosted glass effect
 import 'dart:ui';
 
+import 'package:blur/widgets/back_arrow.dart';
 import 'package:flutter/material.dart';
 
 class BackgroundScreen extends StatelessWidget {
@@ -11,8 +12,8 @@ class BackgroundScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
-              image: const DecorationImage(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
                 image: AssetImage('assets/hendrix_background.jpeg'),
                 fit: BoxFit.cover,
               ),
@@ -30,26 +31,8 @@ class BackgroundScreen extends StatelessWidget {
             ),
           ),
           const QuoteContainer(),
-          const BackArrow()
+          const BackArrow(),
         ],
-      ),
-    );
-  }
-}
-
-class BackArrow extends StatelessWidget {
-  const BackArrow();
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      top: 48.0,
-      left: 8.0,
-      child: IconButton(
-        icon: Icon(
-          Icons.arrow_back,
-        ),
-        onPressed: () => Navigator.pop(context),
       ),
     );
   }

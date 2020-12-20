@@ -2,6 +2,7 @@ import 'package:blur/screens/background_blur_screen.dart';
 import 'package:blur/screens/dialog_screen.dart';
 import 'package:blur/screens/part_blur_screen.dart';
 import 'package:blur/screens/single_widget_blur.dart';
+import 'package:blur/screens/worse_dialog_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/': (_) => MyHomeScreen(),
         '/background': (_) => BackgroundScreen(),
         '/dialog': (_) => DialogScreen(),
+        '/worse_dialog': (_) => DialogScreen2(),
         '/part': (_) => PartScreen(),
         '/single': (_) => SingleScreen(),
       },
@@ -48,7 +50,14 @@ class MyHomeScreen extends StatelessWidget {
             child: RaisedButton(
               onPressed: () => Navigator.pushNamed(context, '/dialog'),
               color: Colors.orange,
-              child: Text("Dialog with blurred background"),
+              child: Text("Efficient dialog with blurred background"),
+            ),
+          ),
+          Expanded(
+            child: RaisedButton(
+              onPressed: () => Navigator.pushNamed(context, '/dialog'),
+              color: Colors.redAccent,
+              child: Text("Easy dialog with blurred background"),
             ),
           ),
           Expanded(
