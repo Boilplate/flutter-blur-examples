@@ -27,6 +27,7 @@ flutter:
     - assets/hendrix_background.jpeg
     - assets/puppy.jpg
     - assets/animated-hand-image.gif
+    - assets/lakers.jpeg
   # example:
   # fonts:
   #   - family: Schyler

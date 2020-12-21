@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 // Blur behind dialog in Flutter is done using ModalBarrier class
 // so a good way to get blur effect is change it's color property
-// to BackdropFilter
+// inside the build method to BackdropFilter
 // to do that type ModalBarrier as a widget inside build method and
 // ctrl + click on it, that will open it's source file
 // also dont forget to :
@@ -47,7 +47,7 @@ class DialogButton extends StatelessWidget {
           elevation: 5.0,
           onPressed: () => showDialog(
             context: context,
-            builder: (_) => const UselessDialog(),
+            builder: (_) => YourDialog(),
             barrierDismissible: true,
           ),
           child: Text(
@@ -60,9 +60,7 @@ class DialogButton extends StatelessWidget {
   }
 }
 
-class UselessDialog extends StatelessWidget {
-  const UselessDialog();
-
+class YourDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
