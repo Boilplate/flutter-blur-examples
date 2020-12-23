@@ -28,6 +28,8 @@ flutter:
     - assets/puppy.jpg
     - assets/animated-hand-image.gif
     - assets/lakers.jpeg
+    - assets/abstract_art.jpeg
+
   # example:
   # fonts:
   #   - family: Schyler
