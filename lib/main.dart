@@ -1,7 +1,7 @@
-import 'package:blur/screens/background_blur_screen.dart';
+import 'package:blur/screens/background_screen.dart';
 import 'package:blur/screens/dialog_screen.dart';
-import 'package:blur/screens/part_blur_screen.dart';
-import 'package:blur/screens/single_widget_blur.dart';
+import 'package:blur/screens/partial_screen.dart';
+import 'package:blur/screens/single_widget_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         '/': (_) => MyHomeScreen(),
         '/background': (_) => BackgroundScreen(),
         '/dialog': (_) => DialogScreen(),
-        '/part': (_) => PartScreen(),
+        '/part': (_) => PartialScreen(),
         '/single': (_) => SingleScreen(),
       },
     );

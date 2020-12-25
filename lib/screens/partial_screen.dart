@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 // If you want to blur 2 or more widgets for which you know the exact location
 // use Positioned around BackdropFilter
 
-class PartScreen extends StatefulWidget {
+class PartialScreen extends StatefulWidget {
   @override
-  _PartScreenState createState() => _PartScreenState();
+  _PartialScreenState createState() => _PartialScreenState();
 }
 
-class _PartScreenState extends State<PartScreen> {
+class _PartialScreenState extends State<PartialScreen> {
   bool isBlurred = true;
 
   @override
