@@ -46,6 +46,13 @@ class MyHomeScreen extends StatelessWidget {
           ),
           Expanded(
             child: RaisedButton(
+              onPressed: () => Navigator.pushNamed(context, '/single'),
+              color: Colors.grey,
+              child: Text("Single widget blur"),
+            ),
+          ),
+          Expanded(
+            child: RaisedButton(
               onPressed: () => Navigator.pushNamed(context, '/dialog'),
               color: Colors.orange,
               child: Text("Efficient dialog with blurred background"),
@@ -56,13 +63,6 @@ class MyHomeScreen extends StatelessWidget {
               onPressed: () => Navigator.pushNamed(context, '/part'),
               color: Colors.greenAccent,
               child: Text("Part of screen blur"),
-            ),
-          ),
-          Expanded(
-            child: RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/single'),
-              color: Colors.grey,
-              child: Text("Single widget blur"),
             ),
           ),
         ],
