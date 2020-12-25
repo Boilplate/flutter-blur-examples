@@ -6,7 +6,14 @@ import 'package:flutter/material.dart';
 // If you want to blur 2 or more widgets for which you know the exact location
 // use Positioned around BackdropFilter
 
-class PartScreen extends StatelessWidget {
+class PartScreen extends StatefulWidget {
+  @override
+  _PartScreenState createState() => _PartScreenState();
+}
+
+class _PartScreenState extends State<PartScreen> {
+  bool isBlurred = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,17 +52,26 @@ class PartScreen extends StatelessWidget {
             bottom: MediaQuery.of(context).size.height * 0.5,
             left: MediaQuery.of(context).size.height * 0.05,
             right: MediaQuery.of(context).size.height * 0.05,
-            child: ClipRect(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 7.0, sigmaY: 7.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Color(0x00000000),
-                  ),
-                ),
-              ),
-            ),
+            child: isBlurred
+                ? ClipRect(
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 7.0, sigmaY: 7.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0x00000000),
+                        ),
+                      ),
+                    ),
+                  )
+                : Container(),
           ),
+          Positioned(
+            bottom: MediaQuery.of(context).size.height * 0.3,
+            child: RaisedButton(
+              onPressed: () => setState(() => isBlurred = !isBlurred),
+              child: Text("Show answer"),
+            ),
+          )
         ],
       ),
     );
