@@ -3,9 +3,6 @@ import 'dart:ui';
 import 'package:blur/widgets/back_arrow.dart';
 import 'package:flutter/material.dart';
 
-// backdrop filter blurs entire screen except child and widgets under it
-// gives the frosted glass effect
-
 class BackgroundScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

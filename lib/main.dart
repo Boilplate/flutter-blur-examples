@@ -38,34 +38,33 @@ class MyHomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/background'),
-              child: Text("Background blur"),
-            ),
-          ),
-          Expanded(
-            child: RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/single'),
-              color: Colors.grey,
-              child: Text("Single widget blur"),
-            ),
-          ),
-          Expanded(
-            child: RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/dialog'),
-              color: Colors.orange,
-              child: Text("Efficient dialog with blurred background"),
-            ),
-          ),
-          Expanded(
-            child: RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/part'),
-              color: Colors.greenAccent,
-              child: Text("Part of screen blur"),
-            ),
-          ),
+          NavigatorButton(text: 'Background blur', screen: '/background'),
+          NavigatorButton(text: 'Single widget blur', screen: '/single'),
+          NavigatorButton(
+              text: 'Dialog with blurred background', screen: '/dialog'),
+          NavigatorButton(text: 'Partial blur', screen: '/part'),
         ],
+      ),
+    );
+  }
+}
+
+class NavigatorButton extends StatelessWidget {
+  const NavigatorButton({
+    this.text,
+    this.screen,
+  });
+
+  final String text;
+  final String screen;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: RaisedButton(
+        onPressed: () => Navigator.pushNamed(context, screen),
+        color: Colors.greenAccent,
+        child: Text(text),
       ),
     );
   }
