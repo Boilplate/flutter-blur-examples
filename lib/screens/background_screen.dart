@@ -23,15 +23,13 @@ class BackgroundScreen extends StatelessWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 3.0, sigmaY: 3.0),
               child: Container(
-                // This decoration is optional
-                // it adds grey-ish color to the background
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.2),
-                ),
+                // optional
+                // grey-ish filter to the background
+                color: Colors.grey.withOpacity(0.2),
               ),
             ),
           ),
-          // Everything below Backdropfilter won't get blurred
+          // Everything below BackdropFilter won't get blurred
           QuoteContainer(),
           BackArrow(),
         ],

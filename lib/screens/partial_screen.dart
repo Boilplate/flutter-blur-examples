@@ -3,9 +3,6 @@ import 'dart:ui';
 import 'package:blur/widgets/back_arrow.dart';
 import 'package:flutter/material.dart';
 
-// If you want to blur 2 or more widgets for which you know the exact location
-// use Positioned around BackdropFilter
-
 class PartialScreen extends StatefulWidget {
   @override
   _PartialScreenState createState() => _PartialScreenState();
@@ -57,9 +54,7 @@ class _PartialScreenState extends State<PartialScreen> {
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 7.0, sigmaY: 7.0),
                       child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0x00000000),
-                        ),
+                        color: Colors.transparent,
                       ),
                     ),
                   )

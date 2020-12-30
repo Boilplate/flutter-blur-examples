@@ -1,13 +1,10 @@
 import 'package:blur/widgets/back_arrow.dart';
 import 'package:flutter/material.dart';
 
-// This is the efficient way of blurring behind dialog
-
 // Blur behind dialog in Flutter is done using ModalBarrier class
 // so a good way to get blur effect is change it's color property
 // inside the build method to BackdropFilter
-// to do that type ModalBarrier as a widget inside build method and
-// ctrl + click on it, that will open it's source file
+// Ctrl + P (VS Code) or Double Shift (IntelliJ) and type modal_barrier.dart
 // also dont forget to :
 // import 'dart:ui' show ImageFilter;
 
